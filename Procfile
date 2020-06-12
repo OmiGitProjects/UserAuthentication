@@ -1,0 +1,1 @@
+web: gunicorn userRegistration.wsgi
