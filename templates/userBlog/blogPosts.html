@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block Content %}
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-8">
+                        <div class="jumbotron jumbotron-fluid bg-light p-5">
+                                        <h1 class="blog-post-title">{{ blogPost.blogTitle }}</h1>
+                                        <p class="blog-post-meta">{{ blogPost.blogTimeStamp }} by <a href="#" class="badge badge-danger">{{ request.user.username }}</a>
+                                        <hr/>
+                                        <p class="lead">{{ blogPost.blogContent|safe }}</p>
+                        </div>
+                </div>
+
+                <div class="col-md-4">
+                        <div class="socialMedia my-5">
+                                <h5 class="font-italic text-center">Social Networking Stuffs</h5>
+                                <ul class="list-group">
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social btn-linkedin text-white" href="linkedin.com/in/onkar-nardekar-b42742195" target="_blank">
+                                                        <span class="fa fa-linkedin"></span> Create Connection with LinkedIn
+                                                </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social btn-instagram text-white" href="https://www.instagram.com/nardekar45/" target="_blank">
+                                                        <span class="fa fa-instagram"></span> Follow Me on Instagram
+                                                </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social btn-facebook text-white" href="https://www.facebook.com/onkar.nardekar.39" target="_blank">
+                                                        <span class="fa fa-facebook"></span> Make Me as a Facebook Friend
+                                                </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social btn-github text-white" href="https://github.com/OmiGitProjects" target="_blank">
+                                                        <span class="fa fa-github"></span> Check Cool Stuffs On GitHub
+                                                </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social btn-bitbucket text-white" target="_blank">
+                                                        <span class="fa fa-bitbucket"></span> Check Awesome Stuffs on Bitbucket
+                                                </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <a class="btn btn-block btn-social bg-danger text-white" href="https://www.youtube.com/channel/UCSYQKopxwkc7uanCtr3qi-Q?view_as=subscriber" target="_blank">
+                                                        <span class="fa fa-youtube"></span> Subscribe to My Youtube Channel
+                                                </a>
+                                        </li>
+                                </ul>
+                        </div>
+                </div>
+        </div>
+</div>
+
+{% endblock Content %}

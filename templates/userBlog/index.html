@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block blogActive %}active{% endblock blogActive %}
+
+{% block Content %}
+
+<div class="container">
+        <div class="jumbotron jumbotron-fluid text-center bg-light my-0 p-2">
+                <div class="container">
+                        <img src="{% static 'userApp/images/profile.jpg' %}" alt="user"
+                                class="rounded-circle mx-auto d-block  p-2" width="80px">
+                        <h1 class="text-secondary font-italic">My Blogs</h1>
+                        <hr class="my-3">
+                        <p class="text-muted">Here is My Beautiful Blog Section, Go and Visit for More knowlegde, Cool
+                                Ideas and Fun Stuffs</p>
+                        <p class="lead">
+                                <a class="btn btn-danger btn-lg" href="{% url 'contactpage' %}" role="button">Contact Me</a>
+                        </p>
+                </div>
+        </div>
+
+        <div class="container my-4">
+                <div class="row">
+                        <div class="col-md-8">
+                                <div class="row">
+                                        {% for blog in blogs %}
+                                        <div class="col-md-4">
+                                                <div class="card mb-4 box-shadow">
+                                                        <img class="card-img-top"src="{{ blog.images.url }}"  alt="{{ blog.blogTitle }}" height="180px" width="300px">
+                                                        <div class="card-body">
+                                                                <p class="text-center text-secondary font-italic font-weight-bold" style="font-size:13px">{{ blog.blogTitle }}</p><hr class="py-0" />
+                                                                <p class="card-text" style="font-size:12px">{{ blog.blogInfo| truncatechars:100 }}</p>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                        <div class="btn-group">
+                                                                                <a href="blogPost/{{ blog.slug }}" type="button" class="btn btn-sm btn-outline-secondary">Read Posts</a>
+                                                                        </div>
+                                                                        <small class="text-muted">{{ blog.blogTimeStamp }}</small>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        {% endfor %}
+                                </div>
+                        </div>
+
+                        <div class="col-md-4">
+                                <div class="p-3 mb-3 bg-light rounded">
+                                        <h4 class="font-italic">About</h4>
+                                        <p class="mb-0 text-secondary">This is a User Authentication Project and this is Made using Django 3.0.6. Django Authentication and Authorization are Most Powerful and Effiecient to installed in your Web Applications</p>
+                                </div>
+
+                                <div class="p-3 mb-3 bg-light rounded">
+                                        <h5 class="text-danger font-weight-bold font-italic text-center">Old Posts</h5><hr>
+                                        <div class="container">
+                                                {% for oldBlog in oldBlogs %}
+                                                <a href="blogPost/{{ oldBlog.slug }}" ><h6 class="text-secondary">{{ oldBlog.blogTitle }}</h6></a>
+                                                {% endfor %}
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+{% endblock Content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block registerActive %} active {% endblock registerActive %}
+{% block Content %}
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-8">
+                        <div class="jumbotron jumbotron-fluid bg-light">
+                                <div class="container">
+                                        <form method="POST">
+                                                {% csrf_token %}
+                                                <fieldset class="form-group">
+                                                        <legend class="border-bottom mb-4">Join Now</legend>
+                                                        {{ form|crispy }}
+                                                </fieldset>
+                                                <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger">Signup</button>
+                                                </div>
+                                        </form>
+                                        <div class="border-top pt-3">
+                                                <small class="text-muted">
+                                                        Already have an Account? <a href="{% url 'Login' %}" class="ml-2">Login</a>
+                                                </small>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="jumbotron jumbotron-fluid bg-light">
+                                <div class="container">
+                                        <h1 class="text-secondary">User Registration in Django-3.0.6</h1>
+                                        <p class="lead">Go and Checkout My Blog Section After Login Your Account</p>
+                                        <a class="btn btn-danger" href="{% url 'userBlogPage' %}">MyBlogs</a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+{% endblock Content %}

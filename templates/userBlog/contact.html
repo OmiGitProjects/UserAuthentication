@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block contactActive %}active{% endblock contactActive %}
+
+{% block Content %}
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-8">
+                        <div class="section">
+                                <div class="jumbotron jumbotron-fluid bg-light py-4">
+                                        <div class="container">
+                                                <h4 class="text-left text-danger font-italic">Contact Me</h4><hr />
+                                                <form method="POST">
+                                                        {% csrf_token %}
+                                                        <div class="form-group">
+                                                                <label for="username" class="font-italic text-secondary">Username</label>
+                                                                <input type="text" class="form-control" id="username" name="username" value="{{ request.user.username }}"  placeholder="username" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label for="email"  class="font-italic text-secondary">Email</label>
+                                                                <input type="email" class="form-control" id="email" name="email" value="{{ request.user.email }}" placeholder="name@example.com" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label for="message"  class="font-italic text-secondary">Message</label>
+                                                                <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col-md-4">
+                        <div class="jumbotron jumbotron-fluid p-4 bg-white">
+                                <div class="container">
+                                        <h4 class="text-secondary font-italic">You Can View My Blogs.</h4>
+                                        <p class="lead">Here is My Beautiful Blog Section, Go and Visit for More knowlegde, Cool
+                                                Ideas and Fun Stuffs</p>
+                                        <a href="{% url 'userBlogPage' %}" class="btn btn-danger">MyBlogs</a>
+                                </div>
+                        </div>  
+                </div>
+        </div>
+</div>
+
+{% endblock Content %}
