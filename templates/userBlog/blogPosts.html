@@ -6,10 +6,10 @@
         <div class="row">
                 <div class="col-md-8">
                         <div class="jumbotron jumbotron-fluid bg-light p-5">
-                                        <h1 class="blog-post-title">{{ blogPost.blogTitle }}</h1>
-                                        <p class="blog-post-meta">{{ blogPost.blogTimeStamp }} by <a href="#" class="badge badge-danger">{{ request.user.username }}</a>
-                                        <hr/>
-                                        <p class="lead">{{ blogPost.blogContent|safe }}</p>
+                                <h1 class="blog-post-title">{{ blogPost.blogTitle }}</h1>
+                                <p class="blog-post-meta">{{ blogPost.blogTimeStamp }} by <a href="#" class="badge badge-danger">{{ request.user.username }}</a>
+                                <hr/>
+                                <p class="lead">{{ blogPost.blogContent|safe }}</p>
                         </div>
                 </div>
 
