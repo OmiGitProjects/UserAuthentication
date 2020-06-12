@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j*8m22qrnw7e1*1&m0$#vl(s+)0gd2ie0*!1bdqazf#x!i5caj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['omiuserauthentication.herokuapp.com']
 
 
 # Application definition
