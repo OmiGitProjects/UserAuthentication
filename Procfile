@@ -1,1 +1,1 @@
-web: gunicorn userRegistration.wsgi
+web: gunicorn UserRegistration.wsgi
