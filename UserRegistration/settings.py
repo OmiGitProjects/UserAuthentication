@@ -26,7 +26,7 @@ SECRET_KEY = 'j*8m22qrnw7e1*1&m0$#vl(s+)0gd2ie0*!1bdqazf#x!i5caj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['omiuserauth.herokuapp.com']
+ALLOWED_HOSTS = ['userauthwebapp.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
